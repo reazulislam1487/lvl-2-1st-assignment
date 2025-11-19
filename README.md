@@ -92,13 +92,14 @@ Direct ব্যবহার করা যায় না
 
 never এমন function এর জন্য ব্যবহৃত হয় যেটি কখনোই শেষ হয় না অথবা কখনোই কোনো value return করে না।
 
-```function throwError(msg: string): never {
+function throwError(msg: string): never {
   throw new Error(msg);
 }
 
 function infiniteLoop(): never {
   while (true) {}
-}```
+}
+
 
 ✔️ তুলনা টেবিল
 টাইপ	কী বোঝায়	নিরাপদ?
