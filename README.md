@@ -10,14 +10,14 @@ Type দিয়ে extend করতে চাইলে সাধারণত inte
 
 Interface উদাহরণ:
 
-interface Person {
+```interface Person {
   name: string;
 }
+```
 
 interface Employee extends Person {
-  salary: number;
+salary: number;
 }
-
 
 Type উদাহরণ:
 
@@ -32,8 +32,7 @@ Type কখনো merge হয় না; একই নামে দুইবার
 
 Interface merging উদাহরণ:
 
-
-``` interface User {
+```interface User {
   name: string;
 }
 
@@ -42,16 +41,18 @@ interface User {
 }
 // Result => { name: string, age: number }
 ```
+
 ## কখন কোনটা ব্যবহার করবেন?
-বিষয়	Interface	Type
-- Extend করা যায়	✔️	✔️
- - Merge হয়	✔️	❌
-- Union / Tuple define	❌	✔️
-- Best for	Object structure	Complex / hybrid types
-✔️ সংক্ষেপে
+
+বিষয় Interface Type
+
+- Extend করা যায় ✔️ ✔️
+- Merge হয় ✔️ ❌
+- Union / Tuple define ❌ ✔️
+- Best for Object structure Complex / hybrid types
+  ✔️ সংক্ষেপে
 
 Interface মূলত object shape নির্ধারণের জন্য ভালো, আর Type আরও flexible— বিশেষ করে union, intersection বা জটিল টাইপের ক্ষেত্রে।
-
 
 2. any, unknown এবং never — টাইপগুলো কিভাবে আলাদা?
 
@@ -64,7 +65,6 @@ any ব্যবহার করলে TypeScript টাইপ checking বন�
 let data: any = "hello";
 data = 42;
 data = true;
-
 
 যেকোনো value রাখা যায়
 
@@ -81,9 +81,8 @@ unknown এ যেকোনো value রাখা যায়, কিন্তু 
 let value: unknown = "Hello";
 
 if (typeof value === "string") {
-  console.log(value.toUpperCase());
+console.log(value.toUpperCase());
 }
-
 
 Direct ব্যবহার করা যায় না
 
@@ -92,6 +91,7 @@ Direct ব্যবহার করা যায় না
 🔹 never — যে value কখনোই থাকে না
 
 never এমন function এর জন্য ব্যবহৃত হয় যেটি কখনোই শেষ হয় না অথবা কখনোই কোনো value return করে না।
+
 ```
 function throwError(msg: string): never {
   throw new Error(msg);
@@ -102,12 +102,13 @@ function infiniteLoop(): never {
 }
 ```
 
+## তুলনা টেবিল
 
- ## তুলনা টেবিল
-টাইপ	কী বোঝায়	নিরাপদ?
-- any	যেকোনো value	❌ No
-- unknown	যেকোনো value, কিন্তু ব্যবহার করতে check লাগে	✔️ Yes
- - never	Function কখনো return করে না	—
+টাইপ কী বোঝায় নিরাপদ?
+
+- any যেকোনো value ❌ No
+- unknown যেকোনো value, কিন্তু ব্যবহার করতে check লাগে ✔️ Yes
+- never Function কখনো return করে না —
 
 ## উপসংহার
 
