@@ -10,7 +10,8 @@ Type দিয়ে extend করতে চাইলে সাধারণত inte
 
 Interface উদাহরণ:
 
-```interface Person {
+```
+interface Person {
   name: string;
 }
 ```
